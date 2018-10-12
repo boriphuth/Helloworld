@@ -1,14 +1,14 @@
 pipeline {
   agent any
   stages {
-    stage('PullCode Step') {
+    stage('Build Steps') {
       parallel {
-        stage('Build Step') {
+        stage('Pull Code Step') {
           steps {
             git(url: 'https://github.com/iPaoKung/Helloworld.git', branch: 'master', poll: true)
           }
         }
-        stage('Build Step') {
+        stage('Build Code Step') {
           steps {
             sh 'echo "Hello World"'
           }
